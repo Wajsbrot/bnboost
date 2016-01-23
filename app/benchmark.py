@@ -6,8 +6,8 @@ from xgboost.sklearn import XGBClassifier
 np.random.seed(0)
 
 #Loading data
-df_train = pd.read_csv('data/train_users_2.csv')
-df_test = pd.read_csv('data/test_users.csv')
+df_train = pd.read_csv('../data/train_users_2.csv')
+df_test = pd.read_csv('../data/test_users.csv')
 labels = df_train['country_destination'].values
 df_train = df_train.drop(['country_destination'], axis=1)
 id_test = df_test['id']
@@ -50,14 +50,14 @@ for f in ohe_feats:
 vals = df_all.values
 X = vals[:piv_train]
 le = LabelEncoder()
-y = le.fit_transform(labels)   
+y = le.fit_transform(labels)
 X_test = vals[piv_train:]
 
 #Classifier
 xgb = XGBClassifier(max_depth=6, learning_rate=0.3, n_estimators=25,
-                    objective='multi:softprob', subsample=0.5, colsample_bytree=0.5, seed=0)                  
+                    objective='multi:softprob', subsample=0.5, colsample_bytree=0.5, seed=0)
 xgb.fit(X, y)
-y_pred = xgb.predict_proba(X_test)  
+y_pred = xgb.predict_proba(X_test)
 
 #Taking the 5 classes with highest probabilities
 ids = []  #list of ids
@@ -69,4 +69,4 @@ for i in range(len(id_test)):
 
 #Generate submission
 sub = pd.DataFrame(np.column_stack((ids, cts)), columns=['id', 'country'])
-sub.to_csv('sub.csv',index=False)
+sub.to_csv('../out/sub.csv',index=False)

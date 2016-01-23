@@ -15,19 +15,17 @@ import xgboost as xgb
 np.random.seed(0)
 
 # Loading data
-df_train = pd.read_csv('data/train_users_2.csv')
-df_test = pd.read_csv('data/test_users.csv')
+df_train = pd.read_csv('../data/train_users_2.csv')
+df_test = pd.read_csv('../data/test_users.csv')
 labels = df_train['country_destination'].values
 df_train = df_train.drop(['country_destination'], axis=1)
 id_test = df_test['id']
 piv_train = df_train.shape[0]
 
 # df_train.date_first_booking = df_train.date_first_booking.apply(lambda x: np.nan if isinstance(x, float) and isnan(x) else x)
-df_train.gender.replace('-unknown-', np.nan, inplace=True)
-df_train.loc[users.age > 80, 'age'] = np.nan
-df_train.loc[users.age < 18, 'age'] = np.nan
-
-dtrain = xgb.DMatrix(df_train, label=labels, missing=np.nan)
+df_train.replace('-unknown-', np.nan, inplace=True)
+df_train.loc[df_train.age > 80, 'age'] = np.nan
+df_train.loc[df_train.age < 18, 'age'] = np.nan
 
 #Creating a DataFrame with train+test data
 df_all = pd.concat((df_train, df_test), axis=0, ignore_index=True)
@@ -62,6 +60,8 @@ for f in ohe_feats:
     df_all = df_all.drop([f], axis=1)
     df_all = pd.concat((df_all, df_all_dummy), axis=1)
 
+#dtrain = xgb.DMatrix(df_all.values, label=labels, missing=np.nan)
+
 #Splitting train and test
 vals = df_all.values
 X = vals[:piv_train]
@@ -85,4 +85,4 @@ for i in range(len(id_test)):
 
 #Generate submission
 sub = pd.DataFrame(np.column_stack((ids, cts)), columns=['id', 'country'])
-sub.to_csv('sub.csv',index=False)
+sub.to_csv('../out/submission.csv',index=False)
