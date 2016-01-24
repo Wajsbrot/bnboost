@@ -19,6 +19,7 @@ df_train = pd.read_csv('../data/train_users_2.csv')
 df_test = pd.read_csv('../data/test_users.csv')
 labels = df_train['country_destination'].values
 df_train = df_train.drop(['country_destination'], axis=1)
+df_train = df_train.drop(['date_first_booking'], axis=1)
 id_test = df_test['id']
 piv_train = df_train.shape[0]
 
