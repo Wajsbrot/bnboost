@@ -10,7 +10,7 @@ Created on Wed Jan 20 10:12:33 2016
 
 import numpy as np
 import pandas as pd
-
+import argparse
 
 def find_categorical(df, threshold=5):
     """ Find categorical columns in dataframe
@@ -66,3 +66,14 @@ def group_rare_items(col, lim=0.001, impute=None, n_out=None):
             return x if pd.isnull(x) or val_counts[x] > lim else impute
 
     return col.apply(g)
+
+
+def get_options():
+    p = argparse.ArgumentParser(description='Generate audit files.',
+                                formatter_class=\
+                                argparse.ArgumentDefaultsHelpFormatter)
+    p.add_argument('filenames', type=str, nargs='+',
+                   help='names of files under investigation')
+
+    args = p.parse_args()
+    return args

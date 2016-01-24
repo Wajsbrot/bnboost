@@ -11,6 +11,7 @@ Created on Wed Jan  6 18:49:02 2016
 import pandas as pd
 from os.path import join, basename
 from utils import find_categorical
+from utils import get_options
 
 
 def make_audit_file(infile='../data/sample_adinfo_1.csv', desc_file=None,
@@ -31,7 +32,7 @@ def make_audit_file(infile='../data/sample_adinfo_1.csv', desc_file=None,
         csv file columns separator
 
     """
-    def top_values(df, n_values=5, sep=', ', with_count=True):
+    def top_values(df, n_values=10, sep=' ', with_count=True):
         """ Retrieve most represented modalities for each column of a dataframe
 
         Parameters
@@ -97,6 +98,6 @@ def make_audit_file(infile='../data/sample_adinfo_1.csv', desc_file=None,
 
 
 if __name__ == '__main__':
-    files = ['../data/train_users_2.csv']
-    for f in files:
+    options = get_options()
+    for f in options.filenames:
         make_audit_file(f)
