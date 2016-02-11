@@ -1,0 +1,102 @@
+0	age	q
+1	n_pages	q
+2	dt_clicks	q
+3	n_devices	q
+4	delta_create_active	q
+5	first_active_hour	q
+6	gender_FEMALE	q
+7	gender_MALE	q
+8	gender_OTHER	q
+9	gender_nan	q
+10	signup_method_basic	q
+11	signup_method_facebook	q
+12	signup_method_google	q
+13	signup_method_nan	q
+14	signup_flow_0	q
+15	signup_flow_8	q
+16	signup_flow_12	q
+17	signup_flow_23	q
+18	signup_flow_25	q
+19	signup_flow_rare_items	q
+20	signup_flow_nan	q
+21	language_de	q
+22	language_en	q
+23	language_es	q
+24	language_fr	q
+25	language_it	q
+26	language_ja	q
+27	language_ko	q
+28	language_pt	q
+29	language_rare_items	q
+30	language_ru	q
+31	language_zh	q
+32	language_nan	q
+33	affiliate_channel_content	q
+34	affiliate_channel_direct	q
+35	affiliate_channel_other	q
+36	affiliate_channel_remarketing	q
+37	affiliate_channel_sem-brand	q
+38	affiliate_channel_sem-non-brand	q
+39	affiliate_channel_seo	q
+40	affiliate_channel_nan	q
+41	affiliate_provider_bing	q
+42	affiliate_provider_craigslist	q
+43	affiliate_provider_direct	q
+44	affiliate_provider_facebook	q
+45	affiliate_provider_facebook-open-graph	q
+46	affiliate_provider_google	q
+47	affiliate_provider_other	q
+48	affiliate_provider_padmapper	q
+49	affiliate_provider_rare_items	q
+50	affiliate_provider_vast	q
+51	affiliate_provider_yahoo	q
+52	affiliate_provider_nan	q
+53	first_affiliate_tracked_linked	q
+54	first_affiliate_tracked_local ops	q
+55	first_affiliate_tracked_marketing	q
+56	first_affiliate_tracked_omg	q
+57	first_affiliate_tracked_product	q
+58	first_affiliate_tracked_tracked-other	q
+59	first_affiliate_tracked_untracked	q
+60	first_affiliate_tracked_nan	q
+61	signup_app_Android	q
+62	signup_app_Moweb	q
+63	signup_app_Web	q
+64	signup_app_iOS	q
+65	signup_app_nan	q
+66	first_device_type_Android Phone	q
+67	first_device_type_Android Tablet	q
+68	first_device_type_Desktop (Other)	q
+69	first_device_type_Mac Desktop	q
+70	first_device_type_Other/Unknown	q
+71	first_device_type_SmartPhone (Other)	q
+72	first_device_type_Windows Desktop	q
+73	first_device_type_iPad	q
+74	first_device_type_iPhone	q
+75	first_device_type_nan	q
+76	first_browser_AOL Explorer	q
+77	first_browser_Android Browser	q
+78	first_browser_Chrome	q
+79	first_browser_Chrome Mobile	q
+80	first_browser_Firefox	q
+81	first_browser_IE	q
+82	first_browser_Mobile Safari	q
+83	first_browser_Opera	q
+84	first_browser_Safari	q
+85	first_browser_Silk	q
+86	first_browser_rare_items	q
+87	first_browser_nan	q
+88	date_account_created_year_2014.0	q
+89	date_account_created_year_nan	q
+90	date_account_created_month_7.0	q
+91	date_account_created_month_8.0	q
+92	date_account_created_month_9.0	q
+93	date_account_created_month_nan	q
+94	date_account_created_weekday_0.0	q
+95	date_account_created_weekday_1.0	q
+96	date_account_created_weekday_2.0	q
+97	date_account_created_weekday_3.0	q
+98	date_account_created_weekday_4.0	q
+99	date_account_created_weekday_5.0	q
+100	date_account_created_weekday_6.0	q
+101	date_account_created_weekday_nan	q
